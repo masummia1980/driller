@@ -1,0 +1,454 @@
+/* Hero Global ---------------------------------- */
+.as-hero-wrapper {
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    .play-btn {
+        --icon-size: 80px;
+    }
+    .slick-dots {
+        position: absolute;
+        top: 50%;
+        right: 6%;
+        transform: translateY(-50%);
+		@include hd {
+			right: 20%;
+		}
+        li {
+			display: block;
+            margin: 25px 0 !important;
+        }
+        button {
+            font-size: 0;
+            padding: 0;
+            background-color: transparent;
+            width: 8px;
+            height: 8px;
+            line-height: 0;
+            border-radius: 9999px;
+            border: none;
+            background-color: $white-color;
+
+            &:hover {
+                border-color: $theme-color;
+            }
+            &:before {
+                content: "";
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                width: 26px;
+                height: 26px;
+                margin: -13px 0 0 -13px;
+                border: 2px solid $theme-color;
+                border-radius: 50%;
+                transition: all ease 0.4s;
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+        .slick-active {
+            button {
+                background-color: $theme-color;
+
+                &::before {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        }
+    }
+}
+
+.hero-shape {
+    position: absolute;
+}
+
+/* Hero 1 ---------------------------------- */
+.as-hero-bg {
+    position: absolute;
+    inset: 0;
+    img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+.hero-subtitle {
+    display: block;
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: -0.3em;
+}
+.hero-title {
+    font-weight: 900;
+    margin-bottom: 24px;
+    letter-spacing: -0.04em;
+    word-spacing: 0.1em;
+    text-transform: uppercase;
+    &:first-of-type {
+        margin-bottom: 0 !important;
+    }
+    .bg-theme {
+        padding: 0 8px;
+		line-height: 1;
+    }
+}
+.hero-text {
+    max-width: 525px;
+    margin-bottom: 30px;
+}
+.hero-style1 {
+    position: relative;
+    z-index: 6;
+    padding: 245px 0 245px 0;
+    max-width: 660px;
+    .hero-subtitle {
+        color: $theme-color;
+        margin-bottom: 17px;
+    }
+}
+
+.hero-1 {
+    .hero-img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 3;
+        width: 45%;
+        height: 100%;
+        &:before {
+            content: "";
+            height: 100%;
+            width: 100%;
+            background-color: $theme-color;
+            position: absolute;
+            top: 0;
+            right: 0;
+            clip-path: polygon(115px 0, 100% 0, 100% 100%, 115px 100%, 0 50%);
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            clip-path: polygon(170px 0, 100% 0, 100% 100%, 170px 100%, 0 50%);
+        }
+        .icon-btn {
+            --btn-size: 70px;
+            line-height: 60px;
+            font-size: 24px;
+            background-color: $theme-color;
+            color: $white-color;
+            border-radius: 10px;
+            border: 4px solid $white-color;
+            position: absolute;
+            top: 50%;
+            left: -20px;
+            transform: translateY(-50%) rotate(45deg);
+            i {
+                transform: rotate(-45deg);
+            }
+            &:hover {
+                background-color: $title-color;
+            }
+        }
+    }
+}
+
+@include ml {
+    .hero-style1 {
+        padding: 200px 0;
+    }
+    .hero-1 .hero-img {
+        max-width: 48%;
+    }
+}
+
+@include lg {
+    .hero-title {
+        margin-bottom: 20px;
+    }
+    .hero-text {
+        max-width: 450px;
+    }
+    .hero-style1 {
+        padding: 140px 0;
+    }
+}
+
+@include md {
+    .hero-style1 {
+        padding: 80px 0;
+        max-width: 450px;
+    }
+    .hero-1 .hero-img {
+        max-width: 34%;
+    }
+}
+
+@include sm {
+    .hero-1 .hero-img {
+        display: none;
+    }
+    .hero-subtitle {
+        font-size: 18px;
+    }
+}
+
+/* Hero 2 ---------------------------------- */
+.hero-meta {
+    margin-bottom: 20px;
+    margin-top: -0.4em;
+    span {
+        display: inline-block;
+        font-size: 20px;
+        text-transform: capitalize;
+        color: $white-color;
+        position: relative;
+        &:after {
+            content: "";
+            height: 2px;
+            width: 30px;
+            background-color: $white-color;
+            display: inline-block;
+            margin: 0 15px;
+            position: relative;
+            top: -4px;
+        }
+        &:last-child {
+            &::after {
+                display: none;
+            }
+        }
+    }
+}
+.big-text {
+    font-family: $title-font;
+    font-weight: 900;
+    font-size: 170px;
+    text-transform: uppercase;
+    letter-spacing: -0.04em;
+    -webkit-text-stroke: 1px rgba($color: #fff, $alpha: 0.23);
+    color: transparent;
+}
+.hero-2 {
+    .big-text {
+        position: absolute;
+        top: 32%;
+        left: 9%;
+        z-index: 2;
+    }
+    .hero-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin-top: 100px;
+        height: calc(100% - 100px);
+        width: 52%;
+        z-index: 1;
+        img {
+            height: 100%;
+            width: 100%;
+        }
+    }
+    .play-btn {
+        position: absolute;
+        top: 50%;
+        margin-top: -40px;
+        right: 40px;
+        z-index: 4;
+    }
+    .icon-box {
+        display: flex;
+        position: absolute;
+        bottom: 60px;
+        left: 9%;
+        z-index: 3;
+    }
+    .icon-btn {
+        --btn-size: 80px;
+        border-radius: 0;
+        font-size: 26px;
+        color: $white-color;
+        background-color: $theme-color;
+        box-shadow: 0 10px 10px 10px rgba($color: #000000, $alpha: 0.08);
+        &:hover {
+            color: $theme-color;
+            background-color: $white-color;
+        }
+    }
+}
+.hero-style2 {
+    position: relative;
+    z-index: 3;
+    padding: 320px 0 265px 0;
+    .hero-title,
+    .hero-text {
+        color: $white-color;
+    }
+}
+
+@include xl {
+    .big-text {
+        font-size: 150px;
+    }
+    .hero-2 .big-text {
+        left: 5%;
+    }
+}
+
+@include ml {
+    .hero-style2 {
+        padding: 280px 0 230px 0;
+    }
+}
+
+@include lg {
+    .big-text {
+        font-size: 130px;
+    }
+    .hero-2 {
+        .hero-img {
+            margin-top: 87px;
+            height: calc(100% - 87px);
+            width: 70%;
+        }
+        .big-text {
+            left: 3%;
+        }
+        .icon-box {
+            left: 14%;
+            bottom: 45px;
+        }
+    }
+}
+
+@include md {
+    .big-text {
+        font-size: 100px;
+    }
+    .hero-2 {
+        .hero-img {
+            width: 80%;
+            margin-top: 89px;
+            height: calc(100% - 89px);
+        }
+        .big-text {
+            top: 28%;
+        }
+        .icon-box {
+            left: 17%;
+            bottom: 50px;
+        }
+        .icon-btn {
+            --btn-size: 60px;
+            font-size: 20px;
+        }
+    }
+    .hero-style2 {
+        padding: 200px 0 200px 0;
+    }
+}
+
+@include sm {
+    .hero-2 {
+        .play-btn {
+            display: none;
+        }
+        .hero-img {
+            width: 85%;
+        }
+    }
+}
+
+@include xs {
+    .big-text {
+        font-size: 90px;
+    }
+    .hero-2 {
+        .hero-img {
+            width: 98%;
+        }
+    }
+}
+
+@include vxs {
+    .hero-2 {
+        .hero-img {
+            margin-top: 74px;
+            height: calc(100% - 74px);
+            width: 100%;
+        }
+    }
+    .big-text {
+        font-size: 70px;
+    }
+    .hero-style2 {
+        padding: 160px 0 180px 0;
+    }
+}
+
+/* Hero 3 ---------------------------------- */
+.hero-style3 {
+    padding: 320px 0 235px 0;
+    .hero-meta {
+        span {
+            text-transform: uppercase;
+			transition: 0.4s ease-in-out;
+			&:not(:last-child) {
+				margin-right: 22px;
+			}
+			&:hover {
+				color: $theme-color;
+			}
+            &:after {
+                display: none;
+            }
+        }
+    }
+    .hero-title,
+    .hero-text {
+        color: $white-color;
+    }
+    .hero-text {
+        max-width: 680px;
+    }
+}
+
+@include lg {
+	.hero-style3 {
+		padding: 210px 0 180px 0;
+	}
+}
+
+@include md {
+	.hero-style3 {
+		.hero-text {
+			max-width: 540px;
+		}
+	}
+}
+
+@include sm {
+	.hero-style3 {
+		padding: 170px 0 150px 0;
+		.hero-meta {
+			span {
+				font-size: 18px;
+			}
+		}
+	}
+}
+
+@include xs {
+	.hero-style3 {
+		.hero-meta {
+			span {
+				font-size: 16px;
+				&:not(:last-child) {
+					margin-right: 14px;
+				}
+			}
+		}
+	}
+}

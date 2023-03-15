@@ -1,0 +1,193 @@
+.checklist {
+    ul {
+        padding-left: 0;
+        list-style: none;
+        text-align: left;
+        margin-bottom: 0;
+    }
+    li {
+        color: $title-color;
+        margin-bottom: 10px;
+        font-weight: 500;
+        position: relative;
+        padding-left: 24px;
+        &:before {
+            content: "\f058";
+            font-family: $icon-font;
+            font-weight: 900;
+            color: $theme-color;
+            position: absolute;
+            left: 0;
+            transition: 0.3s ease-in-out;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    &.style2 {
+        li {
+            font-family: $body-font;
+            font-weight: 400;
+            color: $body-color;
+            margin-bottom: 5px;
+            &:before {
+                content: "\f336";
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+    &.style3 {
+        li {
+            font-family: $title-font;
+            font-weight: 600;
+            color: $title-color;
+            padding-left: 36px;
+            &:not(:last-child) {
+                margin-bottom: 20px;
+                @include xs {
+                    margin-bottom: 14px;
+                }
+            }
+            &:before {
+                content: "";
+                font-size: 0;
+                background-image: url("data:image/svg+xml,%3Csvg width='26' height='26' viewBox='0 0 26 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect opacity='0.2' width='26' height='26' rx='5' fill='%23FF4C13'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M16.4996 9.56685L9.60117 14.1326L9.60095 17.0845C9.60082 18.708 9.58812 20.2556 9.57267 20.5235C9.55364 20.8537 9.5589 21.0053 9.58906 20.9941C9.61349 20.985 12.699 17.4257 16.4458 13.0845C20.1926 8.74332 23.2977 5.14811 23.3461 5.09519C23.3946 5.04227 23.4261 4.99941 23.4161 5.00001C23.4061 5.00056 20.2937 7.05566 16.4996 9.56685Z' fill='%23FF4C13'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M7.65376 12.5393L9.6311 14.1335V18.2074C9.63116 19.3669 9.59351 20.472 9.59976 20.6634C9.60746 20.8992 9.60533 21.0074 9.59313 20.9994C9.58325 20.9929 8.33528 18.4511 6.8199 15.3509C5.3045 12.2507 4.0486 9.68317 4.02902 9.64537C4.00943 9.60758 3.99669 9.57697 4.00074 9.5774C4.00477 9.57779 4.40641 9.87686 7.65376 12.5393Z' fill='%23FF4C13'/%3E%3C/svg%3E");
+                height: 26px;
+                width: 26px;
+            }
+        }
+    }
+    &.mb-40 {
+        @include lg {
+            margin-bottom: 32px;
+        }
+    }
+    &.mb-45 {
+        @include lg {
+            margin-bottom: 35px;
+        }
+    }
+}
+
+.arrow-list {
+    &-wrap {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        margin-bottom: 30px;
+        padding-bottom: 30px;
+        border-bottom: 1px solid $border-color;
+        @include sm {
+            flex-wrap: wrap;
+        }
+    }
+    ul {
+        padding-left: 0;
+        list-style: none;
+        text-align: left;
+        margin-bottom: 0;
+    }
+    li {
+        color: $title-color;
+        margin-bottom: 10px;
+        position: relative;
+        padding-left: 28px;
+        &:before {
+            content: "\f178";
+            font-family: $icon-font;
+            font-weight: 600;
+            color: $theme-color;
+            position: absolute;
+            left: 0;
+            transition: 0.3s ease-in-out;
+        }
+        // &:first-child {
+        //     margin-top: -0.5em;
+        // }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.bg-img {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.img-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    height: 100%;
+    width: 48%;
+    img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: top right;
+    }
+    @include lg {
+        position: relative;
+        width: 100%;
+    }
+}
+
+.as-video {
+    position: relative;
+    border-radius: 5px;
+    img {
+        border-radius: inherit;
+    }
+    .play-btn {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        > i {
+            background-color: $theme-color;
+            color: $white-color;
+        }
+    }
+}
+
+.icon-box {
+    .slick-arrow {
+        &:first-child {
+            margin-right: 5px;
+        }
+    }
+}
+
+.btn-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 15px 30px;
+}
+
+@include lg {
+    p {
+        &.mb-30 {
+            margin-bottom: 25px;
+        }
+        &.mb-35 {
+            margin-bottom: 28px;
+        }
+        &.mb-40 {
+            margin-bottom: 32px;
+        }
+        &.mb-45 {
+            margin-bottom: 35px;
+        }
+    }
+}

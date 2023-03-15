@@ -1,0 +1,97 @@
+/* Testimonial 1 ---------------------------------- */
+.testi-box { 
+    overflow: hidden;
+    &_content {
+        padding: 60px 30px 30px 30px;
+        border-radius: 10px;
+        background-color: $white-color;
+    }
+    &_img {
+        margin-left: 30px;
+        margin-bottom: -40px;
+        width: 80px;
+        img {
+            border-radius: 999px;
+        }
+    }
+    &_name {
+        font-size: 24px;
+        margin-bottom: 4px;
+        margin-top: -0.24em;
+        font-weight: 700;
+    }
+    &_desig {
+        color: $theme-color;
+        margin-bottom: 15px;
+        display: block;
+    }
+    &_text {
+        padding-left: 19px;
+        margin-bottom: -0.45em;
+        position: relative;
+        &:before {
+            content: '';
+            height: calc(100% - 14px);
+            width: 4px;
+            background-color: $theme-color;
+            position: absolute;
+            top: 7px;
+            left: 0;
+        }
+    }
+}
+
+@include lg {
+    .testi-sec {
+        background-position: center right;
+    }
+}
+
+
+/* Testimonial 2 ---------------------------------- */
+.testi-card {
+    background-color: $white-color;
+    padding: 40px;
+    box-shadow: 0px 4px 14px rgba(7, 36, 95, 0.06);
+    &_img {
+        margin-bottom: 23px;
+        position: relative;
+        display: inline-block;
+        > img {
+            border-radius: 50%;
+        }
+    }
+    &_quote {
+        text-align: center;
+        background-color: $white-color;
+        width: 22px;
+        height: 22px;
+        border-radius: 3px;
+        box-shadow: 0px 4px 10px rgba(7, 36, 95, 0.15);
+        line-height: 19px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        transform: skewY(-25deg);
+        img {
+            transform: skewY(25deg);
+        }
+    }
+    &_name {
+        font-size: 24px;
+        margin-bottom: 4px;
+    }
+    &_desig {
+        margin-bottom: -0.45em;
+        display: block;
+    }
+    &_text {
+        margin-bottom: 15px;
+    }
+}
+
+@include vxs {
+    .testi-card {
+        padding: 40px 20px;
+    }
+}

@@ -1,0 +1,336 @@
+.footer-wrapper {
+    position: relative;
+    z-index: 2;
+    .newsletter-title {
+        color: $white-color;
+    }
+    .as-social {
+        a {
+            background-color: transparent;
+            color: $white-color;
+            border: 1px solid $white-color;
+            &:hover {
+                background-color: $theme-color;
+				border-color: $theme-color;
+            }
+        }
+    }
+}
+.widget-area {
+    padding-top: $space;
+    padding-bottom: 75px;
+}
+
+.copyright-wrap {
+    padding: 29px 0;
+}
+
+.copyright-text {
+    margin: 0;
+    a {
+        color: inherit;
+        &:hover {
+            color: $theme-color;
+        }
+    }
+}
+
+@include ml {
+    .as-social a {
+        margin-right: 3px;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.footer-links {
+    ul {
+        padding: 0;
+        margin: 0;
+    }
+    li {
+        font-family: $body-font;
+        display: inline-block;
+        padding-right: 15px;
+        margin-right: 10px;
+        position: relative;
+        &:after {
+            content: '';
+            height: 20px;
+            width: 1px;
+            background-color: $white-color;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            margin: -10px 0;
+        }
+        &:last-child {
+            margin-right: 0;
+            padding-right: 0;
+            &:after {
+                display: none;
+            }
+        }
+    }
+    a {
+        font-family: inherit;
+        color: $body-color;
+        &:hover {
+            color: $theme-color;
+        }
+    }
+}
+
+.footer-layout1 {
+    background-color: $title-color;
+    --body-color: #F8F8F8;
+    overflow: hidden;
+    .copyright-wrap {
+        padding: 16px 0;
+        background-color: #0E121D;
+    }
+}
+
+
+.as-widget-contact {
+    max-width: 260px;
+}
+
+.info-box {
+	display: flex;
+    margin-bottom: 22px;
+    &:last-child {
+        margin-bottom: -5px;
+    }
+    &_icon {
+        @include equal-size-lineHeight(30px);
+        min-width: 30px;
+        font-size: 14px;
+        background-color: $theme-color;
+        color: $white-color;
+        border-radius: 999px;
+        text-align: center;
+        margin-right: 10px;
+    }
+	&_text {
+		display: block;
+		color: $white-color;
+		margin-top: -0.45em;
+		margin-bottom: 0;
+	}
+	&_link {
+        display: inline-block;
+		color: $body-color;
+		&:hover {
+			color: $theme-color;
+		}
+	}
+}
+
+@include lg {
+    .footer-layout1 .copyright-wrap {
+        padding: 25px 0;
+    }
+}
+
+@include md {
+    .footer-layout1 {
+        .widget-area {
+            padding-top: $space-mobile;
+            padding-bottom: 38px;
+        }
+    }
+    .copyright-text {
+        text-align: center;
+    }
+}
+
+/* Footer 2 ---------------------------------- */
+.footer-layout2 {
+    background-color: $title-color;
+    --body-color: #fff;
+    .widget-area {
+        padding-top: 100px;
+        padding-bottom: 55px;
+    }
+    .copyright-wrap {
+        padding: 16px 0;
+        background-color: #0E121D;
+    }
+}
+.newsletter-wrap {
+    background-color: $theme-color;
+    padding: 60px;
+    position: relative;
+    z-index: 4;
+    .newsletter-title {
+        color: $white-color;
+        margin-top: -0.2em;
+        margin-bottom: 20px;
+    }
+    .newsletter-form {
+        max-width: 600px;
+        gap: 10px;
+    }
+    .form-control {
+        border: 1px solid $theme-color;
+        color: $body-color;
+        @include inputPlaceholder {
+            color: $body-color;
+        }
+    }
+    .as-btn {
+        min-width: 160px;
+    }
+    .newsletter-shape {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+}
+.footer-spacer {
+    height: 145px;
+}
+
+@include lg {
+    .newsletter-wrap {
+        padding: 60px 30px;
+        .newsletter-shape {
+            max-width: 390px;
+        }
+    }
+    .footer-spacer {
+        height: 100px;
+    }
+}
+
+@include md {
+    .footer-layout2 {
+        .widget-area {
+            padding-top: 80px;
+            padding-bottom: 40px;
+        }
+    }
+    .newsletter-wrap {
+        padding: 40px;
+        text-align: center;
+        .newsletter-form {
+            justify-content: center;
+            max-width: 100%;
+        }
+        .newsletter-shape {
+            max-width: 450px;
+            position: relative;
+            margin: -140px auto 20px auto;
+        }
+    }
+}
+
+@include xs {
+    .newsletter-wrap {
+        padding: 20px;
+        .newsletter-form {
+            flex-wrap: wrap;
+        }
+        .newsletter-shape {
+            margin: -120px auto 20px auto;
+        }
+    }
+}
+
+/* Footer 2 ---------------------------------- */
+.footer-layout3 {
+    background-color: $title-color;
+    --body-color: #fff;
+    --border-color: rgba(255, 255, 255, 0.12);
+    .widget-area {
+        padding-top: 100px;
+        padding-bottom: 55px;
+    }
+    .copyright-wrap {
+        padding: 25.5px 0;
+        border-top: 1px solid $border-color;
+    }
+}
+
+.footer-top {
+    border-bottom: 1px solid $border-color;
+    .footer-logo {
+        padding: 80px 0;
+        border-right: 1px solid $border-color;
+    }
+}
+.subscribe-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    padding-left: 16px;
+    &_text {
+        color: rgba($color: #fff, $alpha: 0.6);
+        font-weight: 600;
+        margin-bottom: 8px;
+    }
+    &_title {
+        color: $white-color;
+        margin-bottom: 0;
+    }
+    .newsletter-form {
+        max-width: 440px;
+        gap: 10px;
+    }
+    .form-control {
+        border: 1px solid $title-color;
+        color: #4D5765;
+        @include inputPlaceholder {
+            color: #4D5765;
+        }
+    }
+    .as-btn {
+        min-width: 140px;
+        padding: 20.5px 20px;
+    }
+}
+
+@include lg {
+    .footer-top {
+        .footer-logo {
+            text-align: center;
+            border-right: none;
+            padding: 60px 0 30px 0;
+        }
+    }
+    .subscribe-box {
+        padding-bottom: 50px;
+    }
+}
+
+@include md {
+    .footer-layout3 {
+        .widget-area {
+            padding-top: 80px;
+            padding-bottom: 40px;
+        }
+    }
+    .subscribe-box {
+        justify-content: center;
+        text-align: center;
+        gap: 20px;
+        .newsletter-form {
+            max-width: 500px;
+            width: 100%;
+        }
+    }
+}
+
+
+@include xs {
+    .subscribe-box {
+        .newsletter-form {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    }
+}

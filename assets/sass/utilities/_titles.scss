@@ -1,0 +1,198 @@
+.sec-title {
+  margin-bottom: calc(var(--section-title-space) - 12px);
+  margin-top: -0.23em;
+}
+
+.sub-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: $title-color;
+  font-family: $title-font;
+  text-transform: uppercase;
+  margin-top: -0.41em;
+  margin-bottom: 25px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  .dots {
+    display: inline-block;
+    width: 3px;
+    height: 3px;
+    background-color: inherit;
+    border-radius: 99px;
+    position: absolute;
+    top: 0;
+    &:before, 
+    &:after {
+      content: '';
+      height: inherit;
+      width: inherit;
+      background-color: inherit;
+      border-radius: inherit;
+      display: inline-block;
+      position: absolute;
+      top: 0;
+    }
+  }
+  .shape {
+    display: inline-block;
+    height: 3px;
+    width: 40px;
+    background-color: $theme-color;
+    border-radius: 99px;
+    position: relative;
+    &.left {
+      .dots {
+        left: -6px;
+        &:before {
+          left: -6px;
+        }
+        &:after {
+          left: -12px;
+        }
+      }
+    }
+    &.right {
+      .dots {
+        right: -6px;
+        &:before {
+          right: -6px;
+        }
+        &:after {
+          right: -12px;
+        }
+      }
+    }
+  }
+}
+
+.shadow-title {
+  font-size: 160px;
+  font-weight: 900;
+  color: transparent;
+  line-height: 0.89;
+  -webkit-text-stroke: 1px $title-color;
+  opacity: 0.08;
+  margin-top: -0.08em;
+  margin-bottom: -100px;
+  width: 100%;
+  z-index: -1;
+  &.border-white {
+    -webkit-text-stroke: 1px $white-color;
+  }
+}
+
+.title-area {
+  margin-bottom: calc(var(--section-title-space) - 12px);
+  position: relative;
+  z-index: 2;
+  .sec-title {
+    margin-bottom: 15px;
+  }
+  &.mb-0 {
+    .sec-title {
+      margin-bottom: -0.41em;
+    }
+  }
+}
+
+.sec-text {
+  max-width: 670px;
+}
+.title-area.text-center {
+  .sec-text {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.sec-btn {
+  margin-bottom: var(--section-title-space);
+}
+
+@include ml {
+  .shadow-title {
+    font-size: 140px;
+    margin-bottom: -90px;
+  }
+}
+
+@include lg {
+  .sub-title {
+    margin-bottom: 20px;
+  }
+  .shadow-title {
+    font-size: 120px;
+    margin-bottom: -82px;
+  }
+  .title-area,
+  .sec-title {
+    --section-title-space: 60px;
+    &.mb-30 {
+      margin-bottom: 25px;
+    }
+    &.mb-40 {
+      margin-bottom: 30px;
+    }
+    &.mb-45 {
+      margin-bottom: 32px;
+    }
+    &.mb-50 {
+      margin-bottom: 35px;
+    }
+    &.mb-25 {
+      margin-bottom: 15px;
+    }
+    &.mb-35 {
+      margin-bottom: 25px;
+    }
+  }
+  .sec-btn {
+    --section-title-space: 65px;
+  }
+}
+
+@include md {
+  .shadow-title {
+    font-size: 100px;
+  }
+  .title-area,
+  .sec-title {
+    --section-title-space: 45px;
+    &.mb-40 {
+      margin-bottom: 25px;
+    }
+    &.mb-45 {
+      margin-bottom: 27px;
+    }
+    &.mb-50 {
+      margin-bottom: 28px;
+    }
+  }
+  .sec-btn {
+    --section-title-space: 45px;
+  }
+}
+
+@include sm {
+  .shadow-title {
+    font-size: 80px;
+    margin-top: -3px;
+    margin-bottom: -75px;
+  }
+}
+
+@include xs {
+  .shadow-title {
+    font-size: 70px;
+    margin-top: 6px;
+  }
+}
+
+@include vxs {
+  .shadow-title {
+    font-size: 60px;
+    margin-top: 15px;
+  }
+}

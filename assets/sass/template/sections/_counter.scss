@@ -1,0 +1,125 @@
+/* Counter 1 ---------------------------------- */
+.counter-card {
+    &-wrap {
+        padding: 65px;
+    }
+    &-wrap2 {
+        padding: 60px 0;
+    }
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    &_icon {
+        @include equal-size(80px);
+        line-height: 70px;
+        background-color: $theme-color;
+        border: 10px solid #5A6492;
+        border-radius: 50%;
+        box-sizing: content-box;
+        text-align: center;
+        img {
+            transition: 0.4s ease-in-out;
+        }
+    }
+    &_number {
+        color: $white-color;
+        margin-bottom: 5px;
+        margin-top: -0.24em;
+    }
+    &_text {
+        color: $white-color;
+        display: block;
+        margin-bottom: -0.45em;
+    }
+    &:hover {
+        .counter-card {
+            &_icon {
+                img {
+                    transform: rotateY(180deg);
+                }
+            }
+        }
+    }
+    &.style2 {
+        .counter-card {
+            &_icon {
+                border: none;
+            }
+        }
+    }
+}
+
+@include ml {
+    .counter-card {
+        &_number {
+            max-width: 110px;
+        }
+    }
+}
+
+@include lg {
+    .counter-card {
+        &_number {
+            font-size: 40px;
+        }
+    }
+}
+
+
+@include sm {
+    .counter-card {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+        &_number {
+            max-width: 100%;
+        }
+    }
+}
+
+@include vxs {
+    .counter-card-wrap {
+        padding: 65px 20px;
+    }
+}
+
+/* Counter 2 ---------------------------------- */
+.counter-grid {
+    &-wrap {
+        display: flex;
+        justify-content: space-between;
+        gap: 25px 20px;
+        flex-wrap: wrap;
+    }
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    &_icon {
+        min-width: 55px;
+        img {
+            transition: 0.4s ease-in-out;
+        }
+    }
+    &_number {
+        color: $theme-color;
+        margin-bottom: 0;
+        margin-top: -0.2em;
+    }
+    &_text {
+        color: $title-color;
+        font-size: 14px;
+        font-weight: 500;
+        text-transform: uppercase;
+        display: block;
+        margin-bottom: -0.45em;
+    }
+    &:hover {
+        .counter-grid {
+            &_icon {
+                img {
+                    transform: rotateY(180deg);
+                }
+            }
+        }
+    }
+}

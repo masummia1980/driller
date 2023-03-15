@@ -1,0 +1,89 @@
+/* Brand 1 ---------------------------------- */
+.brand-box {
+    &-wrap {
+        background-color: $smoke-color;
+        box-shadow: -1000px 0 0 0 $smoke-color;
+    }
+    padding: 25px 0;
+}
+.brand-icon-wrap {
+    height: 100%;
+    background-color: $body-color;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    clip-path: polygon(50px 0%, 100% 0, 100% 100%, 50px 100%, 0% 50%);
+    .slick-arrow {
+        margin-left: 25px;
+        top: 0;
+    }
+}
+
+@include ml {
+    .brand-box {
+        &-wrap {
+            box-shadow: -200px 0 0 0 $smoke-color;
+        }
+    }
+}
+@include sm {
+    .brand-icon-wrap .slick-arrow {
+        margin-right: 0;
+    }
+}
+
+@include xs {
+    .brand-box {
+        text-align: center;
+    }
+}
+
+/* Brand 2 ---------------------------------- */
+.brand-grid {
+    &-wrap {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        justify-content: space-between;
+        gap: 70px 155px;
+    }
+    text-align: center;
+}
+
+@media (max-width: 1300px) {
+    .brand-grid {
+        &-wrap {
+            gap: 70px 130px;
+        }
+    }
+}
+
+@include lg {
+    .brand-grid {
+        &-wrap {
+            grid-template-columns: repeat(5, 1fr);
+            gap: 70px 130px;
+        }
+    }
+}
+@include md {
+    .brand-grid {
+        &-wrap {
+            gap: 70px 75px;
+        }
+    }
+}
+@include sm {
+    .brand-grid {
+        &-wrap {
+            grid-template-columns: repeat(4, 1fr);
+            gap: 50px;
+        }
+    }
+}
+@include vxs {
+    .brand-grid {
+        &-wrap {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+}
